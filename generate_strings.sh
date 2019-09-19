@@ -1,0 +1,1 @@
+flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/core/generates res/values/strings_*.arb
