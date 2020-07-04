@@ -214,7 +214,9 @@ abstract class LDEViewMixin<T extends StatefulWidget> extends State<T>
     return context;
   }
 
-  Widget makeEmptyStateWidget() {}
+  Widget makeEmptyStateWidget() {
+    return Text("some text");
+  }
 
   void onRefreshData();
 

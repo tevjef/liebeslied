@@ -148,9 +148,9 @@ void main() async {
         // S.delegate.resolution(fallback: new Locale("en", "")),
     // supportedLocales: S.delegate.supportedLocales,
     routes: <String, WidgetBuilder>{
-      Routes.home: (BuildContext context) => MyApp(),
+      Routes.home: (BuildContext context) => HomePage(),
     },
-    home: MyApp(),
+    home: HomePage(),
   );
 
   runZoned<Future<Null>>(() async {
