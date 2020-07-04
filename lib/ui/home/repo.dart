@@ -1,4 +1,4 @@
-import 'client.dart';
+import '../../data/client.dart';
 
 class Repo {
   final ApiClient apiClient;

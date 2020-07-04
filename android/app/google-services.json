@@ -1,0 +1,40 @@
+{
+    "project_info": {
+      "project_number": "475581132065",
+      "firebase_url": "https://liebeslied-8efaa.firebaseio.com",
+      "project_id": "liebeslied-8efaa",
+      "storage_bucket": "liebeslied-8efaa.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:475581132065:android:075566b4d36e6c223ca260",
+          "android_client_info": {
+            "package_name": "in.tev.liebeslied"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "475581132065-43inaihm71ldp2u49et82nbm2vlcipgk.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyD3rx1eG5BMP2p8WwQnyZcJnPWqAOfSUug"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "475581132065-43inaihm71ldp2u49et82nbm2vlcipgk.apps.googleusercontent.com",
+                "client_type": 3
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

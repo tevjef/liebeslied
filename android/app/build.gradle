@@ -1,14 +1,14 @@
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
-    localPropertiesFile.withReader('UTF-8') { reader ->
-        localProperties.load(reader)
-    }
+  localPropertiesFile.withReader('UTF-8') { reader -> localProperties.load(reader)
+  }
 }
 
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
-    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+  throw new GradleException(
+      "Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
 }
 
 apply plugin: 'com.android.application'
@@ -17,15 +17,15 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: 'io.fabric'
 
 android {
-    compileSdkVersion 28
+  compileSdkVersion 29
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+  }
 
-    lintOptions {
-        disable 'InvalidPackage'
-    }
+  lintOptions {
+    disable 'InvalidPackage'
+  }
 
   signingConfigs {
     debug {
@@ -53,20 +53,24 @@ android {
     }
   }
 
-    defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "in.tev.liebeslied"
-        minSdkVersion 16
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.buildVersion
-        versionName rootProject.ext.buildVersionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        resConfigs 'en'
+  defaultConfig {
+    // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+    applicationId "in.tev.liebeslied"
+    multiDexEnabled true
 
-        manifestPlaceholders = [admob_app_id: rootProject.ext.admobAppId]
-    }
+    minSdkVersion 16
+    targetSdkVersion rootProject.ext.androidTargetSdkVersion
 
-    buildTypes {
+    versionCode rootProject.ext.androidBuildVersion
+    versionName rootProject.ext.androidBuildVersionName
+
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    resConfigs 'en'
+
+    manifestPlaceholders = [admob_app_id: rootProject.ext.androidAdmobAppId]
+  }
+
+  buildTypes {
     release {
       signingConfig signingConfigs.release
     }
@@ -79,11 +83,12 @@ android {
 }
 
 flutter {
-    source '../..'
+  source '../..'
 }
 
 dependencies {
   implementation 'androidx.appcompat:appcompat:1.1.0'
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
   testImplementation 'junit:junit:4.12'
   androidTestImplementation 'androidx.test:runner:1.1.1'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'

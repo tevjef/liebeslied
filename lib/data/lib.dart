@@ -1,6 +1,6 @@
 library data;
 
-export 'repo.dart';
+export '../ui/home/repo.dart';
 export 'admob/ad_mob.dart';
 export 'util/error.dart';
 export 'analytics/analytics.dart';
